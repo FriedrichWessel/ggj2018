@@ -32,7 +32,7 @@ public class WalkTowardsTargetTest  {
 	{
 		yield return SceneManager.LoadSceneAsync("TestingGround", LoadSceneMode.Additive);
 		CreateSetup();
-		_ability.Init();
+		_ability.Init(new NewWalkTargetSignal());
 		_ability.SetSpeed(10);
 		_agent.transform.position = new Vector3(0,0,0);
 		_ability.SetTarget(new Vector3(2,0,2));

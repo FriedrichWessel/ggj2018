@@ -8,14 +8,22 @@ public class WalkTowardsGoalAbility : MonoBehaviour
 	
 	private Vector3 _targetPosition;
 	private NavMeshAgent _agent;
-	private float _activeSpeed; 
-	
+	private float _activeSpeed;
+	private NewWalkTargetSignal _walkTargetSignal;
+
 	// Use this for initialization
 	[Inject]
-	public void Init ()
+	public void Init (NewWalkTargetSignal walkTargetSignal)
 	{
 		_agent = gameObject.GetComponent<NavMeshAgent>();
 		SetSpeed(BaseSpeed);
+		_walkTargetSignal = walkTargetSignal;
+		_walkTargetSignal += SetTarget;
+	}
+
+	private void OnDestroy()
+	{
+		_walkTargetSignal -= SetTarget;
 	}
 
 	public void SetSpeed(float newSpeed)
