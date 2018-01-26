@@ -26,7 +26,7 @@ public class ReceiveMouseTargetAbility : MonoBehaviour {
 	{
 		foreach (var targetAbility in TargetAbilities)
 		{
-			targetAbility.SetTarget(targetPos);
+				targetAbility.SetTarget(targetPos);
 		}
 	}
 	

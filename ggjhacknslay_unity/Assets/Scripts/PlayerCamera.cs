@@ -19,7 +19,6 @@ public class PlayerCamera : MonoBehaviour, IPlayerCamera {
 		position = Vector3.zero;
 		RaycastHit hit; 
 		var ray = MainCamera.ScreenPointToRay(mousePosition);
-		Debug.DrawRay(ray.origin, ray.direction*100, Color.cyan, 10);
 		if (Physics.Raycast(ray, out hit, float.PositiveInfinity,  NavMeshLayer))
 		{
 			position = hit.point;

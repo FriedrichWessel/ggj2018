@@ -4,17 +4,20 @@ using Zenject;
 
 public class WalkTowardsGoalAbility : GoalAbility
 {
-	public float BaseSpeed;
-	
+	private SpeedData Speed; 
 	private NavMeshAgent _agent;
 	private float _activeSpeed;
+	public bool IsWalking {
+		get { return _agent.velocity.magnitude > 0.5f;  }
+	}
 
 	// Use this for initialization
 	[Inject]
 	public void Init ()
 	{
 		_agent = gameObject.GetComponent<NavMeshAgent>();
-		SetSpeed(BaseSpeed);
+		Speed = gameObject.GetComponent<SpeedData>();
+		SetSpeed(Speed.Speed);
 	}
 
 	public void SetSpeed(float newSpeed)
