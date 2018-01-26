@@ -2,28 +2,19 @@
 using UnityEngine.AI;
 using Zenject;
 
-public class WalkTowardsGoalAbility : MonoBehaviour
+public class WalkTowardsGoalAbility : GoalAbility
 {
 	public float BaseSpeed;
 	
-	private Vector3 _targetPosition;
 	private NavMeshAgent _agent;
 	private float _activeSpeed;
-	private NewWalkTargetSignal _walkTargetSignal;
 
 	// Use this for initialization
 	[Inject]
-	public void Init (NewWalkTargetSignal walkTargetSignal)
+	public void Init ()
 	{
 		_agent = gameObject.GetComponent<NavMeshAgent>();
 		SetSpeed(BaseSpeed);
-		_walkTargetSignal = walkTargetSignal;
-		_walkTargetSignal += SetTarget;
-	}
-
-	private void OnDestroy()
-	{
-		_walkTargetSignal -= SetTarget;
 	}
 
 	public void SetSpeed(float newSpeed)
@@ -32,9 +23,9 @@ public class WalkTowardsGoalAbility : MonoBehaviour
 		_agent.speed = _activeSpeed;
 	}
 
-	public void SetTarget(Vector3 target)
+	public override void SetTarget(Vector3 target)
 	{
-		_targetPosition = target;
+		base.SetTarget(target);
 		_agent.SetDestination(_targetPosition);
 	}
 
