@@ -8,11 +8,36 @@ public class PlayerCamera : MonoBehaviour, IPlayerCamera {
 	public Camera MainCamera { get; private set; }
 	public LayerMask NavMeshLayer;
 	public LayerMask TargetLayer;
-	
+	public float ScreenNoiseTime;
+	public GameObject ScreenNoiseObject;
+	private GameOverSignal _gameOverSignal;
+
 	[Inject]
-	void Init()
+	void Init(GameOverSignal gameOverSignal)
 	{
 		MainCamera = gameObject.GetComponent<Camera>();
+		_gameOverSignal = gameOverSignal;
+		_gameOverSignal += StartScreenNoise; 
+	}
+
+	void OnDestroy()
+	{
+		_gameOverSignal -= StartScreenNoise;
+		StopAllCoroutines();
+	}
+
+	private void StartScreenNoise()
+	{
+		
+		StartCoroutine(ScreenNoise());
+	}
+
+	private IEnumerator ScreenNoise()
+	{
+		ScreenNoiseObject.SetActive(true);
+		yield return new WaitForSeconds(ScreenNoiseTime);
+		ScreenNoiseObject.SetActive(false);
+		
 	}
 
 	public bool GetNavMeshPosition(Vector2 mousePosition, out Vector3 position)
