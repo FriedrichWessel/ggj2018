@@ -19,15 +19,21 @@ public class AttackZoneBehaviour : Behaviour {
 
 	public override void Activate()
 	{
-		
 		AttackZone.enabled = true;
+	}
+
+	public override void FinsishBehaviour()
+	{
+		AttackAbility.Cancel();
+		AttackZone.enabled = false;
+		base.FinsishBehaviour();
 	}
 
 	public override void DeactivateBehaviour()
 	{
+		base.DeactivateBehaviour();
 		AttackAbility.Cancel();
 		AttackZone.enabled = false;
-		base.DeactivateBehaviour();
 	}
 
 	private void Attack(Collider other)
@@ -35,7 +41,7 @@ public class AttackZoneBehaviour : Behaviour {
 		var target = other.GetComponent<TargetableAbility>();
 		if (target != null)
 		{
-			AttackAbility.Deactivated += DeactivateBehaviour; 
+			AttackAbility.Deactivated += FinsishBehaviour; 
 			AttackAbility.Attack(target);
 		}
 	}
