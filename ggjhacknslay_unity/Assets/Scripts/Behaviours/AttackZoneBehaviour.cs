@@ -19,12 +19,13 @@ public class AttackZoneBehaviour : Behaviour {
 
 	public override void Activate()
 	{
-		AttackAbility.Cancel();
+		
 		AttackZone.enabled = true;
 	}
 
 	public override void DeactivateBehaviour()
 	{
+		AttackAbility.Cancel();
 		AttackZone.enabled = false;
 		base.DeactivateBehaviour();
 	}
