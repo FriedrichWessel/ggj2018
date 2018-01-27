@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: helmet01
+  m_Name: helmet02
   m_Shader: {fileID: 4800000, guid: 6e61731d5972b43488829882975604bb, type: 3}
   m_ShaderKeywords: _METALLICGLOSSMAP
   m_LightmapFlags: 4
@@ -39,11 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d4ee2b967aaba8a469eef3bdcadb72b1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b79348d574483446890b086b780a900, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic:
-        m_Texture: {fileID: 2800000, guid: 34ad989b23112ef46b1c2a39c0b8512f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 22f794c324f8d0848a0e03905786c14a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
