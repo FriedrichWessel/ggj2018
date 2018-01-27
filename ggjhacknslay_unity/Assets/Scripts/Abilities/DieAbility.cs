@@ -9,6 +9,7 @@ public class DieAbility : Ability
 {
 	private HealthData Data;
 	private DeadData DeadData;
+	public Ability[] ActivateOnDeath; 
 	
 	[Inject]
 	void Init ()
@@ -36,6 +37,10 @@ public class DieAbility : Ability
 				behaviour.DeactivateBehaviour();
 			}
 			DeadData = gameObject.AddComponent<DeadData>();
+			foreach (var ability in ActivateOnDeath)
+			{
+				ability.Activate();
+			}
 			
 		}
 	}
