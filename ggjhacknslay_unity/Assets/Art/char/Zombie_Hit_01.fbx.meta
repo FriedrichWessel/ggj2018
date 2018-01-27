@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e0f25e6511cf1c44390ff1445aab0f6c
-timeCreated: 1517093629
+guid: 9ca3c91aa7069cc44b8325dd6ad771e8
+timeCreated: 1517094597
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -73,7 +73,7 @@ ModelImporter:
     3300000: sword01_low
     4300000: sword01_low
     4300002: zombie_low
-    7400000: hit
+    7400000: Take 001
     9500000: //RootNode
     13700000: zombie_low
   externalObjects: {}
@@ -102,35 +102,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: hit
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 100
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
