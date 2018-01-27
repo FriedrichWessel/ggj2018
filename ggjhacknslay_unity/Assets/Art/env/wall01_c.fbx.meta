@@ -1,24 +1,22 @@
 fileFormatVersion: 2
-guid: 18285edb00836924d8b79448af1974ae
-timeCreated: 1517007022
+guid: 0ce4df2c64b7a3f47b751639134576ba
+timeCreated: 1517082764
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Default
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: floor01_a
-    7400000: Take 001
-    9500000: //RootNode
+    4300000: wall01_c
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Default
-    second: {fileID: 2100000, guid: 4cf6217b5ac572549b70a996d372fc01, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: b3f0b26362024e249b6a42cea4a325e6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
