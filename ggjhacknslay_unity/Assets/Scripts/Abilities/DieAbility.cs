@@ -18,7 +18,7 @@ public class DieAbility : Ability
 
 	private void Update()
 	{
-		if (Data.Health < 0 && DeadData == null)
+		if (Data.CurrentHealth < 0 && DeadData == null)
 		{
 			var abilities = gameObject.GetComponents<Ability>();
 			var childAbilities = gameObject.GetComponentsInChildren<Ability>();

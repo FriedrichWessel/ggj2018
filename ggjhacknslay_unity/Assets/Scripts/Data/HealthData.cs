@@ -4,5 +4,11 @@ using UnityEngine;
 
 public class HealthData : MonoBehaviour
 {
-	public float Health;
+	public float CurrentHealth { get; set; }
+	public float BaseHealth;
+
+	void Start()
+	{
+		CurrentHealth = BaseHealth; 
+	}
 }

@@ -19,7 +19,7 @@ public class ApplyFlatDamageAbility : DamageAbility
 		var damageReceiver = other.GetComponent<HealthData>();
 		if (damageReceiver != null)
 		{
-			damageReceiver.Health -= Data.FlatDamage;
+			damageReceiver.CurrentHealth -= Data.FlatDamage;
 		}
 		if (DisablesAfterHit)
 		{
