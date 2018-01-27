@@ -8,6 +8,7 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Default
+    2100002: No Name
     2300000: //RootNode
     3300000: //RootNode
     4300000: helmet_low
@@ -18,6 +19,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Default
+    second: {fileID: 2100000, guid: 63d179661eddcd549857b6af82866dcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
     second: {fileID: 2100000, guid: 63d179661eddcd549857b6af82866dcc, type: 2}
   materials:
     importMaterials: 1
