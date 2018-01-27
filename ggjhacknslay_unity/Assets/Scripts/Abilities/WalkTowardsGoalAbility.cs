@@ -11,6 +11,11 @@ public class WalkTowardsGoalAbility : GoalAbility
 		get { return _agent.velocity.magnitude > 0.5f;  }
 	}
 
+	public float DistanceToTarget
+	{
+		get { return (this.transform.position - _targetPosition).magnitude; }
+	}
+
 	// Use this for initialization
 	[Inject]
 	public void Init ()
@@ -32,8 +37,19 @@ public class WalkTowardsGoalAbility : GoalAbility
 	{
 		if(!this.enabled) return;
 		
+		_agent.isStopped = false;
 		base.SetTarget(target);
 		_agent.SetDestination(_targetPosition);
 	}
 
+	public override void Cancel()
+	{
+		CancelWalk();
+	}
+
+	public void CancelWalk()
+	{
+		_agent.isStopped = true;
+		
+	}
 }
