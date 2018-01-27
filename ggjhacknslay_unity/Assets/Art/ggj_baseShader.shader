@@ -14,15 +14,19 @@
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
 		#pragma surface surf Standard fullforwardshadows vertex:vert finalcolor:mycolor
-
+		#pragma multi_compile_fog
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
 
+
 		sampler2D _MainTex;
+		uniform half4 unity_FogStart;
+		uniform half4 unity_FogEnd;
 
 		struct Input {
 			float2 uv_MainTex;
 			float3 worldPos;
+			half fog;
 		};
 
 		float _shdrWireframe;
@@ -33,19 +37,31 @@
 		sampler2D _Wireframe;
 		fixed4 _Color;
 
-		void vert (inout appdata_full v) {
-			//fixed4 s = tex2Dlod (_Scramble, v.normal.xy);
+
+		void vert (inout appdata_full v, out Input data) {
 			fixed4 s = tex2Dlod (_Scramble, v.vertex);
 			v.vertex.xyz += v.normal * _shdrScramble * s;
+
+			UNITY_INITIALIZE_OUTPUT(Input,data);
+    		float pos = length(UnityObjectToViewPos(v.vertex).xyz);
+   			float diff = unity_FogEnd.x - unity_FogStart.x;
+   			float invDiff = 1.0f / diff;
+    		data.fog = saturate ((unity_FogEnd.x - pos) * invDiff);
+			
 		}
 
 		void mycolor (Input IN, SurfaceOutputStandard o, inout fixed4 color){
+			
 			fixed wA = saturate(_shdrWireframe);
 			fixed4 w = tex2D (_Wireframe, IN.uv_MainTex);
 			color = lerp(color, w, wA);
 			float tw = saturate(_ToWhite);
 			color = max(color, _ToWhite);
 			color.a = 1;
+			color *= IN.fog;
+
+   			
+   		   	
 		}
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
