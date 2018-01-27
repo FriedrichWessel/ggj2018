@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Wireframe:
-        m_Texture: {fileID: 2800000, guid: 0da48150e3c9ab7419af59a6ded3b6e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 49f79ecf9c609664b94d6ad9cd2d4ef6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -81,6 +81,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _ToWhite: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

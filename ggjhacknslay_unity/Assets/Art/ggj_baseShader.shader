@@ -5,6 +5,7 @@
 		_Metallic ("Metallic / Gloss", 2D) = "white" {}
 		_Wireframe ("Wireframe", 2D) = "black" {}
 		_Scramble ("Scramble", 2D) = "white" {}
+		_ToWhite ("Fade to White", Float) = 0
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -26,6 +27,7 @@
 
 		float _shdrWireframe;
 		float _shdrScramble;
+		float _ToWhite;
 		sampler2D _Metallic;
 		sampler2D _Scramble;
 		sampler2D _Wireframe;
@@ -41,6 +43,8 @@
 			fixed wA = saturate(_shdrWireframe);
 			fixed4 w = tex2D (_Wireframe, IN.uv_MainTex);
 			color = lerp(color, w, wA);
+			float tw = saturate(_ToWhite);
+			color = max(color, _ToWhite);
 			color.a = 1;
 		}
 
