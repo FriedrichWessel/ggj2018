@@ -703,6 +703,10 @@ GameObject:
   - component: {fileID: 1273393259}
   - component: {fileID: 1273393258}
   - component: {fileID: 1273393257}
+  - component: {fileID: 1273393262}
+  - component: {fileID: 1273393261}
+  - component: {fileID: 1273393260}
+  - component: {fileID: 1273393263}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -788,6 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResistsDeath: 0
+  DisablesAfterHit: 1
 --- !u!114 &1273393258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +820,63 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1273393260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273393252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec47f171eddbb4dc48093947165dacfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationControl: {fileID: 401758244}
+  Ability: {fileID: 1273393262}
+--- !u!114 &1273393261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273393252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c07bb07f88c0477fbd0db7bd3060f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 2
+--- !u!114 &1273393262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273393252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6b4a30dd20d4a578f58816c3ec9427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResistsDeath: 0
+  DamageAbilities:
+  - {fileID: 1273393257}
+  Data: {fileID: 1273393261}
+  WarmUpTime: 0.2
+  ActiveTime: 1
+--- !u!114 &1273393263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273393252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93d87899d34b437ea657303a22de2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResistsDeath: 0
+  KeyToMatch: 32
+  Abilities:
+  - {fileID: 1273393262}
 --- !u!1 &1435623435
 GameObject:
   m_ObjectHideFlags: 0

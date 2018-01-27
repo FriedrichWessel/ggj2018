@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class ApplyFlatDamageAbility : Ability
+public class ApplyFlatDamageAbility : DamageAbility
 {
-	private DamageData Data;
-
+	public bool DisablesAfterHit = true;
 	[Inject]
 	private void Init()
 	{
-		Data = gameObject.GetComponent<DamageData>();
+		this.enabled = false;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -21,6 +20,10 @@ public class ApplyFlatDamageAbility : Ability
 		if (damageReceiver != null)
 		{
 			damageReceiver.Health -= Data.FlatDamage;
+		}
+		if (DisablesAfterHit)
+		{
+			this.enabled = false;
 		}
 	}
 }
