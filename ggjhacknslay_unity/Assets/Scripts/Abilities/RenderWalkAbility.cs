@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class RenderWalkAbility : MonoBehaviour {
+public class RenderWalkAbility : Ability {
 	private const string WALK_BOOL = "Walk";
 
 	public WalkTowardsGoalAbility _walkToTargetAbility;

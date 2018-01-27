@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
 
-public class ReceiveMouseTargetAbility : MonoBehaviour {
+public class ReceiveMouseTargetAbility : Ability {
 	private NewWalkTargetSignal _walkTargetSignal;
 
 	public GoalAbility[] TargetAbilities;
@@ -24,6 +24,8 @@ public class ReceiveMouseTargetAbility : MonoBehaviour {
 
 	private void SetTarget(Vector3 targetPos)
 	{
+		if (!this.enabled) return;
+		
 		foreach (var targetAbility in TargetAbilities)
 		{
 				targetAbility.SetTarget(targetPos);

@@ -22,12 +22,16 @@ public class WalkTowardsGoalAbility : GoalAbility
 
 	public void SetSpeed(float newSpeed)
 	{
+		if (!this.enabled) return;
+		
 		_activeSpeed = newSpeed;
 		_agent.speed = _activeSpeed;
 	}
 
 	public override void SetTarget(Vector3 target)
 	{
+		if(!this.enabled) return;
+		
 		base.SetTarget(target);
 		_agent.SetDestination(_targetPosition);
 	}

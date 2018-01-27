@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoalAbility : MonoBehaviour {
+public class GoalAbility : Ability {
 	
 	protected Vector3 _targetPosition;
 	

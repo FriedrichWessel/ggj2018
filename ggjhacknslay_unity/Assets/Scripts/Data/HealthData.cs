@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealhData : MonoBehaviour
+public class HealthData : MonoBehaviour
 {
 	public float Health;
 }
