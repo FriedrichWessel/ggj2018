@@ -20,6 +20,7 @@ public class WalkToTargetTask : Task  {
 		if (_source.DistanceToTarget < _target.Radius)
 		{
 			StopTask();
+			FireFinished();
 		}
 		
 	}
@@ -32,7 +33,6 @@ public class WalkToTargetTask : Task  {
 	private void StopTask()
 	{
 		_source.CancelWalk();
-		FireFinished();
 		base.Cancel();
 	}
 }

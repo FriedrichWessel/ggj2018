@@ -24,6 +24,13 @@ public class TargetedAttackAbility : Ability {
 		var attackTask = new ActivateAbilityTask(ActiveAttack.Attack, this);
 		_taskSystem.EnqueueTask(walkTask);
 		_taskSystem.EnqueueTask(attackTask);
+		attackTask.Finished += Disable;
+	}
+
+	private void Disable(Task obj)
+	{
+		obj.Finished -= Disable;
+		FireDeactivated();
 	}
 
 	public override void Cancel()
