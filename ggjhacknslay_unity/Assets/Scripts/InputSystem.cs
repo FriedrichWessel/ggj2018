@@ -8,17 +8,20 @@ public class InputSystem  : ITickable{
 	private NewWalkTargetSignal _walkTargetSignal;
 	private KeyPressedSignal _keyPressedSignal;
 	private TargetAquiredSignal _targetAquiredSignal;
+	private GameModel _model;
 
 	public InputSystem(IPlayerCamera camera,
 		NewWalkTargetSignal walkTargetSignal,
 		KeyPressedSignal keyPressedSignal, 
-		TargetAquiredSignal targetAquiredSignal
+		TargetAquiredSignal targetAquiredSignal, 
+		GameModel model
 		)
 	{
 		_playerCamera = camera;
 		_walkTargetSignal = walkTargetSignal;
 		_keyPressedSignal = keyPressedSignal;
 		_targetAquiredSignal = targetAquiredSignal;
+		_model = model;
 	}
 
 	public void Tick()
@@ -29,6 +32,7 @@ public class InputSystem  : ITickable{
 			var newTarget = _playerCamera.CheckForTarget(Input.mousePosition);
 			if (newTarget != null)
 			{
+				_model.CurrentTarget = newTarget;
 				_targetAquiredSignal.Fire(newTarget);	
 			} 
 			else if (_playerCamera.GetNavMeshPosition(Input.mousePosition, out targetPos))

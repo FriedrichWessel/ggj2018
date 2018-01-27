@@ -8,6 +8,7 @@ public class RenderHealthUIAbility : Ability
 
 	public Slider Healthbar;
 	public HealthData Data;
+	public Text HealthOwnerLabel;
 
 	public void Start()
 	{
@@ -23,5 +24,6 @@ public class RenderHealthUIAbility : Ability
 	void Update()
 	{
 		Healthbar.value = Data.CurrentHealth;
+		HealthOwnerLabel.text = Data.Name;
 	}
 }
