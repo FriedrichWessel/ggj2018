@@ -23,6 +23,7 @@ public class ApplyFlatDamageAbility : DamageAbility
 			if (damageReceiver != null)
 			{
 				damageReceiver.CurrentHealth -= Data.FlatDamage;
+				damageReceiver.LastDamageDealer = this;
 			}
 			if (DisablesAfterHit)
 			{
