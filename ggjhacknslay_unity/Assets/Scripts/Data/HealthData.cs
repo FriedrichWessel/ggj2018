@@ -7,6 +7,7 @@ public class HealthData : MonoBehaviour
 	public float CurrentHealth { get; set; }
 	public float BaseHealth;
 	public DamageAbility LastDamageDealer;
+	public string Name;
 
 	void Start()
 	{
