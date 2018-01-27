@@ -261,6 +261,8 @@ GameObject:
   - component: {fileID: 326764631}
   - component: {fileID: 326764630}
   - component: {fileID: 326764634}
+  - component: {fileID: 326764636}
+  - component: {fileID: 326764635}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -341,6 +343,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
+--- !u!114 &326764635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326764629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eda8759a9e154ced8fdd023228c971e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: {fileID: 1273393262}
+--- !u!114 &326764636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326764629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d426055c5cb4420962f1a181b561d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResistsDeath: 0
+  WalkAbility: {fileID: 326764631}
+  ActiveAttack: {fileID: 326764635}
 --- !u!1 &401758236
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +395,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401758236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -405,8 +433,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.55, y: 1.94, z: 0.58}
+  m_Center: {x: 0, y: 0.47, z: 0}
 --- !u!33 &401758239
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -524,6 +552,9 @@ MonoBehaviour:
   NavMeshLayer:
     serializedVersion: 2
     m_Bits: 256
+  TargetLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1076822739
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +657,8 @@ GameObject:
   - component: {fileID: 1149583667}
   - component: {fileID: 1149583666}
   - component: {fileID: 1149583673}
-  m_Layer: 0
+  - component: {fileID: 1149583674}
+  m_Layer: 9
   m_Name: EnemyAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +672,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1149583664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.42, y: 0, z: -2.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1269940679}
@@ -768,6 +800,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1149583674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149583664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7931ae942b9474ab8bd2e807eff5f456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResistsDeath: 0
+  Radius: 2.6
 --- !u!1 &1269940678
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +821,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1269940679}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +859,6 @@ GameObject:
   - component: {fileID: 1273393262}
   - component: {fileID: 1273393261}
   - component: {fileID: 1273393260}
-  - component: {fileID: 1273393263}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -970,21 +1014,6 @@ MonoBehaviour:
   Data: {fileID: 1273393261}
   WarmUpTime: 0.2
   ActiveTime: 1
---- !u!114 &1273393263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1273393252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93d87899d34b437ea657303a22de2a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ResistsDeath: 0
-  KeyToMatch: 32
-  Abilities:
-  - {fileID: 1273393262}
 --- !u!1001 &1288123527
 Prefab:
   m_ObjectHideFlags: 0
@@ -998,7 +1027,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4570961415294186, guid: 05b4c9fd7c6774aa0b399298148b8d28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4570961415294186, guid: 05b4c9fd7c6774aa0b399298148b8d28, type: 2}
       propertyPath: m_LocalPosition.z

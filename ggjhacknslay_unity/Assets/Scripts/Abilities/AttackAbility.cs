@@ -32,6 +32,7 @@ public class AttackAbility : Ability
 	{
 		yield return new WaitForSeconds(Data.Cooldown);
 		IsActive = false;
+		FireDeactivated();
 	}
 
 	private void OnDestroy()

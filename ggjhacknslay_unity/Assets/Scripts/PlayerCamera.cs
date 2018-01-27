@@ -6,7 +6,8 @@ using Zenject;
 public class PlayerCamera : MonoBehaviour, IPlayerCamera {
 
 	public Camera MainCamera { get; private set; }
-	public LayerMask NavMeshLayer; 
+	public LayerMask NavMeshLayer;
+	public LayerMask TargetLayer;
 	
 	[Inject]
 	void Init()
@@ -25,5 +26,17 @@ public class PlayerCamera : MonoBehaviour, IPlayerCamera {
 			return true;
 		}
 		return false;
+	}
+
+	public TargetableAbility CheckForTarget(Vector2 mousePosition)
+	{
+		TargetableAbility target = null;
+		RaycastHit hit; 
+		var ray = MainCamera.ScreenPointToRay(mousePosition);
+		if (Physics.Raycast(ray, out hit, float.PositiveInfinity, TargetLayer))
+		{
+			target = hit.collider.GetComponent<TargetableAbility>();
+		}
+		return target;
 	}
 }
