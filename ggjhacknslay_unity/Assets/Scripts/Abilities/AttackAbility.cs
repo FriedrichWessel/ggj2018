@@ -5,12 +5,18 @@ using UnityEngine;
 public class AttackAbility : Ability
 {
 	public DamageAbility[] DamageAbilities;
+	public Collider CollsionArea;
 	public CooldownData Data;
 
 	public float WarmUpTime;
 	public float ActiveTime;
 
 	public bool IsActive { get; private set;  }
+
+	void Start()
+	{
+		CollsionArea.enabled = false; 
+	}
 
 	public override void Activate()
 	{
@@ -43,6 +49,7 @@ public class AttackAbility : Ability
 	private IEnumerator RunAttack()
 	{
 		yield return new WaitForSeconds(WarmUpTime);
+		CollsionArea.enabled = true; 
 		foreach (var ability in DamageAbilities)
 		{
 			ability.enabled = true;
@@ -52,6 +59,7 @@ public class AttackAbility : Ability
 		{
 			ability.enabled = false;
 		}
-		
+		CollsionArea.enabled = false; 
+
 	}
 }
