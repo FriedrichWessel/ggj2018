@@ -6,6 +6,8 @@ using Zenject;
 public class ApplyFlatDamageAbility : DamageAbility
 {
 	public bool DisablesAfterHit = true;
+	public LayerMask ReactToLayer; 
+	
 	[Inject]
 	private void Init()
 	{
@@ -16,14 +18,17 @@ public class ApplyFlatDamageAbility : DamageAbility
 	{
 		if (!this.enabled) return;
 		
-		var damageReceiver = other.GetComponent<HealthData>();
-		if (damageReceiver != null)
-		{
-			damageReceiver.CurrentHealth -= Data.FlatDamage;
+		if ( ReactToLayer == (ReactToLayer | (1 << other.gameObject.layer))){
+			var damageReceiver = other.GetComponent<HealthData>();
+			if (damageReceiver != null)
+			{
+				damageReceiver.CurrentHealth -= Data.FlatDamage;
+			}
+			if (DisablesAfterHit)
+			{
+				this.enabled = false;
+			}
 		}
-		if (DisablesAfterHit)
-		{
-			this.enabled = false;
-		}
+		
 	}
 }

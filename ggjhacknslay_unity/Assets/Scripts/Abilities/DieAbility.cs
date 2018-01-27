@@ -22,6 +22,7 @@ public class DieAbility : Ability
 		{
 			var abilities = gameObject.GetComponents<Ability>();
 			var childAbilities = gameObject.GetComponentsInChildren<Ability>();
+			var parentBehaviours = gameObject.GetComponentsInParent<Behaviour>();
 			foreach (var ability in abilities)
 			{
 				ability.enabled = ability.ResistsDeath;
@@ -29,6 +30,10 @@ public class DieAbility : Ability
 			foreach (var ability in childAbilities)
 			{
 				ability.enabled = ability.ResistsDeath;
+			}
+			foreach (var behaviour in parentBehaviours)
+			{
+				behaviour.DeactivateBehaviour();
 			}
 			DeadData = gameObject.AddComponent<DeadData>();
 			

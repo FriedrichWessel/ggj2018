@@ -10,27 +10,24 @@ public class TargetedAttackAbility : Ability {
 
 	public WalkTowardsGoalAbility WalkAbility;
 	public ActiveAttackData ActiveAttack;
-	private TargetAquiredSignal _targetAquiredSignal;
 
 	[Inject]
-	public void Init(TaskSystem taskSystem, TargetAquiredSignal signal)
+	public void Init(TaskSystem taskSystem)
 	{
 		_taskSystem = taskSystem;
-		_targetAquiredSignal = signal;
-		_targetAquiredSignal += Attack;
-	}
-
-	private void OnDestroy()
-	{
-		_targetAquiredSignal -= Attack;
 	}
 
 	public void Attack(TargetableAbility target)
 	{
-		_taskSystem.StopAll();
-		var walkTask = new WalkToTargetTask(WalkAbility, target);
-		var attackTask = new ActivateAbilityTask(ActiveAttack.Attack);
+		_taskSystem.StopAll(this);
+		var walkTask = new WalkToTargetTask(WalkAbility, target,this);
+		var attackTask = new ActivateAbilityTask(ActiveAttack.Attack, this);
 		_taskSystem.EnqueueTask(walkTask);
 		_taskSystem.EnqueueTask(attackTask);
+	}
+
+	public override void Cancel()
+	{
+		_taskSystem.StopAll(this);
 	}
 }

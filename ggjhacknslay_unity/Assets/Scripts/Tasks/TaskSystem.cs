@@ -1,44 +1,89 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Zenject;
 
 public class TaskSystem : ITickable {
 	
-	private  Queue<Task> ActiveTaskQueue = new Queue<Task>();
-	private Task _activeTask; 
+	private Dictionary<int, Queue<Task>> ActiveTaskQueue = new Dictionary<int, Queue<Task>>();
+	private List<ActiveTask> _activeTask = new List<ActiveTask>(); 
 	
 	public void EnqueueTask(Task task)
 	{
-		ActiveTaskQueue.Enqueue(task);
+		var hash = task.OwnerHash ;
+		if (!ActiveTaskQueue.ContainsKey(hash))
+		{
+			ActiveTaskQueue.Add(hash, new Queue<Task>());
+			_activeTask.Add(new ActiveTask(hash));
+		}
+		ActiveTaskQueue[hash].Enqueue(task);
+		
 	}
 
 	public void Tick()
 	{
-		if (_activeTask == null && ActiveTaskQueue.Count > 0 )
+		
+		for(int i= 0; i < _activeTask.Count; i++)
 		{
-			_activeTask = ActiveTaskQueue.Dequeue();
-			_activeTask.Finished += DeactivateTask;  
+			var task = _activeTask[i];
+			if (task.TaskToActivate== null && ActiveTaskQueue[task.OwnerHash].Count > 0 )
+			{
+				task.TaskToActivate = ActiveTaskQueue[task.OwnerHash].Dequeue();
+				task.TaskToActivate.Finished += DeactivateTask;  
+			} 
+			if(task.TaskToActivate != null )
+			{
+				task.TaskToActivate.Tick();
+			}
+			_activeTask[i] = task;
 		}
-		if(_activeTask != null )
-		{
-			_activeTask.Tick();
-		}
+	
 	}
 
-	private void DeactivateTask()
+	private void DeactivateTask(Task t)
 	{
-		_activeTask.Finished -= DeactivateTask;
-		_activeTask = null;
+		for (int i = 0; i < _activeTask.Count; i++)
+		{
+			var task = _activeTask[i];
+			if (task.TaskToActivate != t)
+			{
+				continue;
+			}
+			task.TaskToActivate.Finished -= DeactivateTask;
+			_activeTask[i].TaskToActivate = null;
+		}
+		
 	}
 
-	public void StopAll()
+	public void StopAll(object owner)
 	{
-		if (_activeTask != null)
+		var hash = RuntimeHelpers.GetHashCode(owner);
+		for (int i = 0; i < _activeTask.Count; i++)
 		{
-			_activeTask.Cancel();
-			_activeTask = null; 
+			var task = _activeTask[i];
+			if (task.OwnerHash != RuntimeHelpers.GetHashCode(owner))
+			{
+				continue;
+			}
+			if (task.TaskToActivate != null)
+			{
+				task.TaskToActivate.Cancel();
+				task.TaskToActivate = null; 
+			}
+			ActiveTaskQueue[hash].Clear();
 		}
-		ActiveTaskQueue.Clear();
+		
+	}
+
+	private class ActiveTask
+	{
+		public Task TaskToActivate;
+		public int OwnerHash; 
+		public ActiveTask(int hash)
+		{
+			OwnerHash = hash;
+		}
+
 	}
 }

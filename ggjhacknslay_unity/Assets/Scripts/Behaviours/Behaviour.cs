@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Web;
 using UnityEngine;
 
 public class Behaviour : MonoBehaviour
@@ -11,6 +12,7 @@ public class Behaviour : MonoBehaviour
 
 	public virtual void DeactivateBehaviour()
 	{
+		this.enabled = false; 
 		if (NextBehaviour != null)
 		{
 			NextBehaviour.Activate();

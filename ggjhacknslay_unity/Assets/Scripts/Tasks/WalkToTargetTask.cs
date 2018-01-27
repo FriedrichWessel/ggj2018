@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 public class WalkToTargetTask : Task  {
 	private TargetableAbility _target;
 	private WalkTowardsGoalAbility _source;
 
-	public WalkToTargetTask(WalkTowardsGoalAbility source, TargetableAbility target)
+	public WalkToTargetTask(WalkTowardsGoalAbility source, TargetableAbility target, object owner) : base(owner)
 	{
 		_target = target;
 		_source = source;
@@ -18,9 +19,20 @@ public class WalkToTargetTask : Task  {
 		_source.SetTarget(_target.transform.position);
 		if (_source.DistanceToTarget < _target.Radius)
 		{
-			_source.CancelWalk(); 
-			FireFinished();
+			StopTask();
 		}
 		
+	}
+
+	public override void Cancel()
+	{
+		StopTask();
+	}
+
+	private void StopTask()
+	{
+		_source.CancelWalk();
+		FireFinished();
+		base.Cancel();
 	}
 }
