@@ -7,6 +7,7 @@ public class RenderWalkAbility : Ability {
 	private const string WALK_BOOL = "Walk";
 
 	public WalkTowardsGoalAbility _walkToTargetAbility;
+	public AudioSource Sound;
 	private  Animator _animator;
 
 	private bool _isWalking; 
@@ -26,11 +27,19 @@ public class RenderWalkAbility : Ability {
 		if (_walkToTargetAbility.IsWalking && !_isWalking)
 		{
 			_isWalking = true;
+			if (Sound != null)
+			{
+				Sound.Play();
+			}
 			_animator.SetBool(WALK_BOOL, _isWalking);
 		}
 		else if(!_walkToTargetAbility.IsWalking && _isWalking)
 		{
 			_isWalking = false;
+			if (Sound != null)
+			{
+				Sound.Stop();
+			}
 			_animator.SetBool(WALK_BOOL, _isWalking);
 		}
 	}

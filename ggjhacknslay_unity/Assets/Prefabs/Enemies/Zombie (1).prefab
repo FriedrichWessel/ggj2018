@@ -1683,6 +1683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResistsDeath: 1
+  Sound: {fileID: 0}
   AnimationControl: {fileID: 95460649093262276}
 --- !u!114 &114094503974339798
 MonoBehaviour:
@@ -1754,6 +1755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationControl: {fileID: 95460649093262276}
   Ability: {fileID: 114437137959020390}
+  Sound: {fileID: 0}
 --- !u!114 &114337200379460428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1823,6 +1825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResistsDeath: 0
   _walkToTargetAbility: {fileID: 114133354275753906}
+  Sound: {fileID: 0}
 --- !u!114 &114529913685017092
 MonoBehaviour:
   m_ObjectHideFlags: 1
