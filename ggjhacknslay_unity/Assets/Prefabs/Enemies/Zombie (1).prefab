@@ -2041,7 +2041,6 @@ MonoBehaviour:
   - AttachmentPoint: {fileID: 4962213632305220}
     ItemType: 1
   StartItems:
-  - {fileID: 0}
   - {fileID: 114239343632079850}
 --- !u!114 &114211066850829426
 MonoBehaviour:
