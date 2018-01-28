@@ -10,7 +10,7 @@ public class PickUpItemAbility : Ability
 	private void OnTriggerEnter(Collider other)
 	{
 		var item = other.GetComponent<Item>();
-		if (item != null)
+		if (item != null && !item.AttachedToBody)
 		{
 			TargetInventory.AddItem(item);
 		}

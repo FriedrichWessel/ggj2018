@@ -7,14 +7,24 @@ public class Inventory : MonoBehaviour
 {
 	public ItemSlot[] ItemAttachmentPoints; 
 	
-	private Dictionary<ItemType,Item> Items = new Dictionary<ItemType, Item>(); 
-	
+	private Dictionary<ItemType,Item> Items = new Dictionary<ItemType, Item>();
+	public Item[] StartItems;
+
+	void Start()
+	{
+		foreach (var item in StartItems)
+		{
+			AddItem(item);
+		}
+	}
+
 	public void AddItem(Item item)
 	{
 		if (!Items.ContainsKey(item.SlotType))
 		{
 			Items.Add(item.SlotType, item);
 		}
+		item.AttachedToBody = true;
 		Items[item.SlotType] = item;
 		UpdateItemView();
 	}
