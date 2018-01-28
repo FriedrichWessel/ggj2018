@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 10
   LastDamageDealer: {fileID: 0}
-  Name: BlobBob the ugly
+  Name: Bubbles
 --- !u!114 &114942332947730272
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2290,7 +2290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Lingering Love
 --- !u!114 &114641077451713858
 MonoBehaviour:
   m_ObjectHideFlags: 1

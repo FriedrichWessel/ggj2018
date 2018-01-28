@@ -2288,7 +2288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Moaning Delight
 --- !u!114 &114725961708623220
 MonoBehaviour:
   m_ObjectHideFlags: 1

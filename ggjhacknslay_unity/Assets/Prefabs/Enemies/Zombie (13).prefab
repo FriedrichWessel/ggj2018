@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Crippling Karrrstein
 --- !u!114 &114186662518250038
 MonoBehaviour:
   m_ObjectHideFlags: 1

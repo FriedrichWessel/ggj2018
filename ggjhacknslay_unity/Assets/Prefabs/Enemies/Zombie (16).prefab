@@ -2383,7 +2383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Transmitting Spit
 --- !u!114 &114839368754346988
 MonoBehaviour:
   m_ObjectHideFlags: 1

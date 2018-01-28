@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Infected Biter
 --- !u!114 &114795397370698110
 MonoBehaviour:
   m_ObjectHideFlags: 1

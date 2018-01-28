@@ -2224,7 +2224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Limping Limbs
 --- !u!114 &114573466009202538
 MonoBehaviour:
   m_ObjectHideFlags: 1

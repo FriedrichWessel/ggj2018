@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Smelly Mike
 --- !u!114 &114468689406038860
 MonoBehaviour:
   m_ObjectHideFlags: 1

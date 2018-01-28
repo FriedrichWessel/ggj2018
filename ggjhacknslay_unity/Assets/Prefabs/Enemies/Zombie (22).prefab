@@ -2109,7 +2109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Rafa-Soundz
 --- !u!114 &114024444389160214
 MonoBehaviour:
   m_ObjectHideFlags: 1

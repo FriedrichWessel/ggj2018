@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 10
   LastDamageDealer: {fileID: 0}
-  Name: BlobBob the ugly
+  Name: Sir Glutton
 --- !u!114 &114134265170240878
 MonoBehaviour:
   m_ObjectHideFlags: 1

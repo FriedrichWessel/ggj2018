@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Hugging Arm
 --- !u!114 &114742696481605720
 MonoBehaviour:
   m_ObjectHideFlags: 1

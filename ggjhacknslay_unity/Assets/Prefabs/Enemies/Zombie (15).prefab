@@ -2268,7 +2268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Disgusting Sweats
 --- !u!114 &114511411035026222
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: No-Teeth Freddy
 --- !u!114 &114533501178491680
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Whimpering Wessel
 --- !u!114 &114992648091037314
 MonoBehaviour:
   m_ObjectHideFlags: 1
