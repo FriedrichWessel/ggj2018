@@ -59,7 +59,7 @@ public class AttackAbility : Ability
 
 	private IEnumerator RunAttack()
 	{
-		if (_model.CurrentTarget != null)
+		if (_model.CurrentTarget != null && gameObject.tag.ToString() == "Player")
 		{
 			this.transform.root.LookAt(_model.CurrentTarget.transform);
 		}

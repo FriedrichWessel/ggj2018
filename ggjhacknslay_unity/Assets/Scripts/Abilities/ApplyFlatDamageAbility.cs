@@ -42,7 +42,7 @@ public class ApplyFlatDamageAbility : DamageAbility
 					if (armor.ArmorValue <= 0)
 					{
 						rest += Mathf.Abs(armor.ArmorValue);
-						armor.gameObject.SetActive(false);
+						//armor.gameObject.SetActive(false);
 					}
 					else
 					{

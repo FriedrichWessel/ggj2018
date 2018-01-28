@@ -29,7 +29,8 @@ public class Inventory : MonoBehaviour
 	public void AddItem(Item item)
 	{
 		if (item == null)
-			return; 
+			return;
+		
 		if (!Items.ContainsKey(item.SlotType))
 		{
 			Items.Add(item.SlotType, item);
@@ -48,6 +49,10 @@ public class Inventory : MonoBehaviour
 		}
 		else
 		{
+			if (gameObject.tag.ToString() != "Player")
+			{
+				return;
+			}
 			_oldItem = Items[item.SlotType];
 			_newItem = item;
 			Items.Remove(item.SlotType);
@@ -99,8 +104,8 @@ public class Inventory : MonoBehaviour
 		var result = new List<Item>();
 		foreach (var item in Items)
 		{
-			result.Add(item.Value);
 			item.Value.Drop();
+			result.Add(item.Value);
 		}
 		
 		Items.Clear();
