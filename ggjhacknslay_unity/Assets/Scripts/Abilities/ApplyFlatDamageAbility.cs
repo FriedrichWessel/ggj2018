@@ -14,6 +14,17 @@ public class ApplyFlatDamageAbility : DamageAbility
 		this.enabled = false;
 	}
 
+	public override void Cancel()
+	{
+		base.Cancel();
+		var connectedCollider = gameObject.GetComponent<Collider>();
+		if (connectedCollider != null)
+		{
+			connectedCollider.enabled = false; 
+		}
+
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!this.enabled) return;

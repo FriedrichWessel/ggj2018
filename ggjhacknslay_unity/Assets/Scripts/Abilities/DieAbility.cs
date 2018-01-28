@@ -28,11 +28,19 @@ public class DieAbility : Ability
 			var parentBehaviours = gameObject.GetComponentsInParent<Behaviour>();
 			foreach (var ability in abilities)
 			{
-				ability.enabled = ability.ResistsDeath;
+				if (!ability.ResistsDeath)
+				{
+					ability.enabled = false; 
+					ability.Cancel();
+				}
 			}
 			foreach (var ability in childAbilities)
 			{
-				ability.enabled = ability.ResistsDeath;
+				if (!ability.ResistsDeath)
+				{
+					ability.enabled = false; 
+					ability.Cancel();
+				}
 			}
 			foreach (var behaviour in parentBehaviours)
 			{

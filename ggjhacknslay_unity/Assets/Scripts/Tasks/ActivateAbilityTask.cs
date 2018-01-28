@@ -18,7 +18,10 @@ public class ActivateAbilityTask : Task {
 		}
 		_running = true;
 		_ability.Deactivated += FireFinished;
-		_ability.Activate();
+		if (_ability.enabled)
+		{
+			_ability.Activate();
+		}
 	}
 
 	public override void Cancel()
