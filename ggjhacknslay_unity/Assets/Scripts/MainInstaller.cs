@@ -11,6 +11,8 @@ public class MainInstaller : MonoInstaller
 		Container.DeclareSignal<TargetAquiredSignal>();
 		Container.DeclareSignal<GameStartSignal>();
 		Container.DeclareSignal<GameOverSignal>();
+		Container.DeclareSignal<ItemSelectedSignal>();
+		Container.DeclareSignal<ShowLootPickerSignal>();
 		Container.Bind<GameModel>().AsSingle();
 		Container.Bind<TaskSystem>().AsSingle();
 		Container.Bind<ITickable>().To<InputSystem>().AsSingle().NonLazy();
