@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -8,10 +9,15 @@ public class EnemySpawner : MonoBehaviour {
 	public Transform[] _enemies;
 	int _pointCount;
 	int _enemyCount;
+
+	private DiContainer _container;
+
 	// Use this for initialization
-	void Start () {
+	[Inject]
+	void Init (DiContainer container) {
 		_pointCount = _spawnpoints.Length;
 		_enemyCount = _enemies.Length;
+		_container = container;
 		SpawnEnemies ();
 	}
 	
@@ -21,11 +27,16 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	void SpawnEnemies () {
+		if (_enemyCount == 0)
+		{
+			return;
+		}
 		foreach (Transform _point in _spawnpoints) {
 			if (Random.Range(0, 100) > 50) {
 				int _enemy = Random.Range(0,_enemyCount-1);
-				Transform _new = Instantiate(_enemies[_enemy], _point);
-				_new.Rotate(Vector3.up * Random.Range (0, 360));
+				var newObject = _container.InstantiatePrefab(_enemies[_enemy], _point);
+				newObject.transform.Rotate(Vector3.up * Random.Range (0, 360));
+				newObject.transform.SetParent(null);
 			}
 		}
 	}
