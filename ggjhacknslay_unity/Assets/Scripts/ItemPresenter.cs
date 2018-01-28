@@ -15,7 +15,10 @@ public class ItemPresenter : MonoBehaviour
 		NameLabel.text = item.Name;
 		ArmorLabel.text = ArmorLabel.text.Replace("{VAL}", item.ArmorValue.ToString());
 		AttackLabel.text = AttackLabel.text.Replace("{VAL}", item.AttackValue.ToString());
-		Icon.sprite = item.Icon;
+		if (item.Icon != null)
+		{
+			Icon.sprite = item.Icon;
+		}
 	}
 
 }

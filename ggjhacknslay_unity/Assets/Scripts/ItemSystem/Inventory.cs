@@ -28,6 +28,8 @@ public class Inventory : MonoBehaviour
 
 	public void AddItem(Item item)
 	{
+		if (item == null)
+			return; 
 		if (!Items.ContainsKey(item.SlotType))
 		{
 			Items.Add(item.SlotType, item);

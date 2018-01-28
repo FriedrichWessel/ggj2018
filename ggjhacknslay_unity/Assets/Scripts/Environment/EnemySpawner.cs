@@ -31,12 +31,18 @@ public class EnemySpawner : MonoBehaviour {
 		{
 			return;
 		}
+		Debug.Log("Spawn" + gameObject.name);
 		foreach (Transform _point in _spawnpoints) {
 			if (Random.Range(0, 100) > 50) {
 				int _enemy = Random.Range(0,_enemyCount-1);
-				var newObject = _container.InstantiatePrefab(_enemies[_enemy], _point);
-				newObject.transform.Rotate(Vector3.up * Random.Range (0, 360));
-				newObject.transform.SetParent(null);
+				var sample = _enemies[_enemy];
+				if (sample.GetComponent<Behaviour>() != null)
+				{
+					var newObject = _container.InstantiatePrefab(sample, _point);
+					newObject.transform.Rotate(Vector3.up * Random.Range (0, 360));
+					newObject.transform.SetParent(null);
+					
+				}
 			}
 		}
 	}
