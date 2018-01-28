@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
 	public ItemType SlotType;
 	public LayerMask DeactivationLayer; 
 	private Rigidbody _rigidBody;
+	public bool AttachedToBody = false; 
 	
 
 	void Start()
@@ -23,6 +24,7 @@ public class Item : MonoBehaviour
 			_rigidBody.isKinematic = false; 
 			_rigidBody.AddForce(new Vector3(0,10,0));
 		}
+		AttachedToBody = false;
 	}
 
 	public void Deactivate()
