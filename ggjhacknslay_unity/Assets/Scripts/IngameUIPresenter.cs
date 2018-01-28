@@ -9,6 +9,7 @@ public class IngameUIPresenter : MonoBehaviour {
 
 	public Animator Animator;
 	public RenderHealthUIAbility EnemyHealthRenderer;
+	public RenderArmorUIAbility EnemyArmorRenderer;
 	public LootSelectionPresenter LootPicker; 
 	
 	private TargetAquiredSignal _targetAquiredSignal;
@@ -44,6 +45,7 @@ public class IngameUIPresenter : MonoBehaviour {
 		if (healthData != null)
 		{
 			EnemyHealthRenderer.Data = healthData;
+			EnemyArmorRenderer.Data = healthData;
 		}
 	}
 
