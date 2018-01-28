@@ -10,10 +10,20 @@ public class RagdollAbility : Ability {
 	void Start ()
 	{
 		_rigidBodys = gameObject.GetComponentsInChildren<Rigidbody>();
+		DeactivateRagdoll();
+	}
+
+	private void DeactivateRagdoll()
+	{
 		foreach (var rigidBody in _rigidBodys)
 		{
-			rigidBody.isKinematic = true; 
+			rigidBody.isKinematic = true;
 		}
+	}
+
+	void OnDestroy()
+	{
+		StopAllCoroutines();
 	}
 
 	public override void Activate()
@@ -24,5 +34,13 @@ public class RagdollAbility : Ability {
 			rigidBody.isKinematic = false; 
 		}
 		Animator.enabled = false;
+		StartCoroutine(WaitForDisable());
+	}
+
+	private IEnumerator WaitForDisable()
+	{
+		yield return new WaitForSeconds(3);
+		DeactivateRagdoll();
+		
 	}
 }

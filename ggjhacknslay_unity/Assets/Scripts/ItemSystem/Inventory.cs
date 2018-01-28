@@ -24,6 +24,15 @@ public class Inventory : MonoBehaviour
 		{
 			Items.Add(item.SlotType, item);
 		}
+		var healtData = this.gameObject.GetComponentInChildren<HealthData>();
+		if (healtData != null)
+		{
+			if (item.ArmorValue > 0)
+			{
+				healtData.ArmorItems.Push(item);
+			}
+		}
+		item.SetParentInventory(this);
 		item.AttachedToBody = true;
 		Items[item.SlotType] = item;
 		UpdateItemView();
@@ -64,5 +73,13 @@ public class Inventory : MonoBehaviour
 		public Transform AttachmentPoint;
 		public ItemType ItemType;
 
+	}
+
+	public void DestroyItem(Item item)
+	{
+		 if (Items.ContainsKey(item.SlotType) && Items[item.SlotType] == item)
+		 {
+			 Items.Remove(item.SlotType);
+		 }
 	}
 }

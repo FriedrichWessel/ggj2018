@@ -20,8 +20,8 @@ public class TargetedAttackAbility : Ability {
 	public void Attack(TargetableAbility target)
 	{
 		_taskSystem.StopAll(this);
-		var walkTask = new WalkToTargetTask(WalkAbility, target,this);
-		var attackTask = new ActivateAbilityTask(ActiveAttack.Attack, this);
+		var walkTask = new WalkToTargetTask(WalkAbility, target,this.gameObject);
+		var attackTask = new ActivateAbilityTask(ActiveAttack.Attack, this.gameObject);
 		_taskSystem.EnqueueTask(walkTask);
 		_taskSystem.EnqueueTask(attackTask);
 		attackTask.Finished += Disable;
