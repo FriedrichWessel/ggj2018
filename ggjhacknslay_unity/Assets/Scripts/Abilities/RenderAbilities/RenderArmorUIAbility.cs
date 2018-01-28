@@ -22,6 +22,15 @@ public class RenderArmorUIAbility : Ability
 
 	void Update()
 	{
-		Healthbar.value = Data.ArmorValue;
+		if (Data == null)
+		{
+			Healthbar.gameObject.SetActive(false);
+		}
+		else
+		{
+			Healthbar.gameObject.SetActive(true);
+			Healthbar.value = Data.ArmorValue;
+		}
+		
 	}
 }

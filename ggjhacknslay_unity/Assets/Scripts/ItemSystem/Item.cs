@@ -19,8 +19,6 @@ public class Item : MonoBehaviour
 
 	void Start()
 	{
-		_rigidBody = gameObject.GetComponent<Rigidbody>();
-		_rigidBody.isKinematic = true;
 		ArmorValue = BaseArmor;
 		AttackValue = BaseAttack;
 	}
@@ -51,11 +49,6 @@ public class Item : MonoBehaviour
 		transform.SetParent(null);
 		var pos = this.transform.position; 
 		this.transform.position = new Vector3(pos.x, 0.5f, pos.z);
-		/*if (_rigidBody != null)
-		{
-			_rigidBody.isKinematic = false;
-			_rigidBody.AddForce(new Vector3(0, 10, 0));
-		}*/
 		AttachedToBody = false;
 	}
 
