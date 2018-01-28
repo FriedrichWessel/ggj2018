@@ -9,12 +9,14 @@ public class DieAbility : Ability
 {
 	private HealthData Data;
 	private DeadData DeadData;
-	public Ability[] ActivateOnDeath; 
-	
+	public Ability[] ActivateOnDeath;
+	private TaskSystem _taskSystem;
+
 	[Inject]
-	void Init ()
+	void Init (TaskSystem taskSystem)
 	{
 		Data = gameObject.GetComponent<HealthData>();
+		_taskSystem = taskSystem; 
 	}
 
 	private void Update()
@@ -41,7 +43,7 @@ public class DieAbility : Ability
 			{
 				ability.Activate();
 			}
-			
+			_taskSystem.StopAll(this.gameObject);
 		}
 	}
 }
