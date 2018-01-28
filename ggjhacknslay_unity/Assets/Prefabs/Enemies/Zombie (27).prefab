@@ -2278,7 +2278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Mighty BFT
 --- !u!135 &135581756542959416
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: 'Ugly Chin '
 --- !u!114 &114942687937695076
 MonoBehaviour:
   m_ObjectHideFlags: 1

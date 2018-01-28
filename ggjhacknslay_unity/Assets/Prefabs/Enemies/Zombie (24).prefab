@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: 'Coughing Amanda '
 --- !u!114 &114954592813227908
 MonoBehaviour:
   m_ObjectHideFlags: 1

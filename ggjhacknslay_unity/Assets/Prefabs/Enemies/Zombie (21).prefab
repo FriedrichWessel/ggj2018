@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Two-Finger Sam
 --- !u!114 &114520006835184450
 MonoBehaviour:
   m_ObjectHideFlags: 1

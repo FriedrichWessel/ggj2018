@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Herr von Faustinger
 --- !u!114 &114967255472854910
 MonoBehaviour:
   m_ObjectHideFlags: 1

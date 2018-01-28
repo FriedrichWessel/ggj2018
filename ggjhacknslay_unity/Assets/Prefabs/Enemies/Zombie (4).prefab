@@ -2175,7 +2175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Mat Brainz
 --- !u!114 &114563533193931052
 MonoBehaviour:
   m_ObjectHideFlags: 1

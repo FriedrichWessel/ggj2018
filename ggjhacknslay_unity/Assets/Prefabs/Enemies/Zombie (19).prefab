@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Sick Feet Jones
 --- !u!114 &114575181093770946
 MonoBehaviour:
   m_ObjectHideFlags: 1

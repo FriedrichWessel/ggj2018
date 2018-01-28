@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Mighty Luca
 --- !u!114 &114994944698929314
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 10
   LastDamageDealer: {fileID: 0}
-  Name: BlobBob the ugly
+  Name: Squishy Fid
 --- !u!114 &114820633371070668
 MonoBehaviour:
   m_ObjectHideFlags: 1

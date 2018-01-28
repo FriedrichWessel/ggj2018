@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Grappling Saliva
 --- !u!114 &114319604725638586
 MonoBehaviour:
   m_ObjectHideFlags: 1

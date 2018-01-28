@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 10
   LastDamageDealer: {fileID: 0}
-  Name: BlobBob the ugly
+  Name: Glitchy Vera
 --- !u!114 &114083639570933046
 MonoBehaviour:
   m_ObjectHideFlags: 1

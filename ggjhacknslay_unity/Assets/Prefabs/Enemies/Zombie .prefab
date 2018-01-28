@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Brainstorm
 --- !u!135 &135837380537516180
 SphereCollider:
   m_ObjectHideFlags: 1

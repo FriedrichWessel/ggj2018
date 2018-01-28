@@ -2158,7 +2158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Dismembered Dave
 --- !u!114 &114519319154741926
 MonoBehaviour:
   m_ObjectHideFlags: 1

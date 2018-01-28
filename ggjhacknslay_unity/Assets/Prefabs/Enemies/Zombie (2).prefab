@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHealth: 5
   LastDamageDealer: {fileID: 0}
-  Name: Helge the simple
+  Name: Grrrmpf
 --- !u!114 &114296237799434746
 MonoBehaviour:
   m_ObjectHideFlags: 1
