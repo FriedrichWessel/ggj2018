@@ -25,6 +25,12 @@ public class AttackAbility : Ability
 		Attack();
 	}
 
+	public override void Cancel()
+	{
+		base.Cancel();
+		StopAllCoroutines();
+	}
+
 	public void Attack()
 	{
 		if (IsActive)

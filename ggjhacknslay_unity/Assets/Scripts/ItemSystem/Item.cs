@@ -47,7 +47,7 @@ public class Item : MonoBehaviour
 		gameObject.SetActive(true);
 		transform.SetParent(null);
 		var pos = this.transform.position; 
-		this.transform.position = new Vector3(pos.x, 0, pos.z);
+		this.transform.position = new Vector3(pos.x, 0.5f, pos.z);
 		/*if (_rigidBody != null)
 		{
 			_rigidBody.isKinematic = false;

@@ -25,6 +25,7 @@ public class AttackZoneBehaviour : Behaviour {
 	public override void FinsishBehaviour()
 	{
 		AttackAbility.Cancel();
+		AttackAbility.Deactivated -= FinsishBehaviour;
 		AttackZone.enabled = false;
 		base.FinsishBehaviour();
 	}
@@ -32,6 +33,8 @@ public class AttackZoneBehaviour : Behaviour {
 	public override void DeactivateBehaviour()
 	{
 		base.DeactivateBehaviour();
+		StopAllCoroutines();
+		AttackAbility.Deactivated -= FinsishBehaviour;
 		AttackAbility.Cancel();
 		AttackZone.enabled = false;
 	}
