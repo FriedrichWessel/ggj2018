@@ -4847,6 +4847,42 @@ MonoBehaviour:
   - {fileID: 4086951611643584}
   - {fileID: 4927597542163520}
   - {fileID: 4261522444491366}
+  _enemies:
+  - {fileID: 4191228356106488, guid: 661e1f5d60dd9f24495ca75e0bff2c79, type: 2}
+  - {fileID: 4894882118295820, guid: a60ba12a9612f1d4cb4d77a69434e24b, type: 2}
+  - {fileID: 4102967034753680, guid: 077d4e6b9ffaa9042a7007accd74a550, type: 2}
+  - {fileID: 4885003385695830, guid: cbddce6734760e24ea3c00b2090343a9, type: 2}
+  - {fileID: 4166381181702928, guid: 9645acc3c9c6ff347b0d0c5dfad2ac98, type: 2}
+  - {fileID: 4180451449270008, guid: 68279d277ba0dda438e374ca3e1fc3ca, type: 2}
+  - {fileID: 4789922384910904, guid: 59416bbd78f75204a8ae1acd6c431468, type: 2}
+  - {fileID: 4588471901231708, guid: 154481f81f3aff041b17d300b590573f, type: 2}
+  - {fileID: 4000721335649646, guid: 02d3b50d5bbdc4e0aa9e970a4d8dd734, type: 2}
+  - {fileID: 4363174305692524, guid: 295e490c8eaef214085d945a3f119452, type: 2}
+  - {fileID: 4000741160031024, guid: 67eb45e8a480ffb42a06b3df73815a31, type: 2}
+  - {fileID: 4246814739542822, guid: 89445c6d66868c840b5e52c28db3b3ae, type: 2}
+  - {fileID: 4709462373615760, guid: ff13d97fcbf5cd24eb07da983de78423, type: 2}
+  - {fileID: 4858121773466148, guid: 389aac50cbe9a1649ad7e80ffd9a1d55, type: 2}
+  - {fileID: 4892016321177340, guid: 8e721a5d4e142854895c835de6f8b6e3, type: 2}
+  - {fileID: 4750592168502574, guid: c4c0674e5451c0b429cfecc3a3d0b837, type: 2}
+  - {fileID: 4590057127536408, guid: 48223c3f730c11f4aab2de64e95edaa0, type: 2}
+  - {fileID: 4797334173065206, guid: dcc19b82a307d4346ae73699951b7be3, type: 2}
+  - {fileID: 4616933040798306, guid: dcd659f209fcaf448a88fdb08c1314ee, type: 2}
+  - {fileID: 4740908015308494, guid: 50f313a7eb3690b4c8826e2dcfc4aeb3, type: 2}
+  - {fileID: 4853510550231270, guid: 4801dc56bb14a5d459730351284e46a5, type: 2}
+  - {fileID: 4016482174883430, guid: 4db1f5ea10a714547ab4f197921200c5, type: 2}
+  - {fileID: 4019580350166358, guid: 8ae0fe69be0b4024982d8acaa62fb70b, type: 2}
+  - {fileID: 4216421934732556, guid: c2bf90adc30066748aebdf7c2618257e, type: 2}
+  - {fileID: 4629349105411908, guid: a457280942f971747b12a863f6d9aab7, type: 2}
+  - {fileID: 4826859599116152, guid: 9212367c2969b2c43bed4520e35be3ca, type: 2}
+  - {fileID: 4640424842743618, guid: 7e52e95b5ef53874dbd5c5b947fd87cf, type: 2}
+  - {fileID: 4299458012834368, guid: 558bf46dfb1b195469b1f0370ae3703b, type: 2}
+  - {fileID: 4967980672513642, guid: 325b27fbecd554c4b988e5f8e7921fad, type: 2}
+  - {fileID: 4623309384588782, guid: 4b041c6ac6de92045bfa91cc50c034e3, type: 2}
+  - {fileID: 4625030861150064, guid: 8d7345e23ab5f344db412d0a668fdf5c, type: 2}
+  - {fileID: 4118436517408158, guid: e079e23957c1d01478c46af399cab86b, type: 2}
+  - {fileID: 4429732712408402, guid: c5e864ad2448ced48a4cedbbb9a5dd3d, type: 2}
+  - {fileID: 4084283183930590, guid: 0fd38a45b48c4df428839c2252148e73, type: 2}
+  - {fileID: 4393958918878474, guid: 0c19fb66dc79d574b8b6d0b414895cb2, type: 2}
 --- !u!114 &114489930359087678
 MonoBehaviour:
   m_ObjectHideFlags: 1
