@@ -3,6 +3,7 @@
 ## Credits
 ###Audio
 Darren Curtis
+Rafael Gobbonicolau
 
 ###Animation
 Karsten Härle
