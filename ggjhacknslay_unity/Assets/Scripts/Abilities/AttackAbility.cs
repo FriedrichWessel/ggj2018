@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Web;
 using UnityEngine;
+using Zenject;
 
 public class AttackAbility : Ability
 {
@@ -10,12 +12,15 @@ public class AttackAbility : Ability
 
 	public float WarmUpTime;
 	public float ActiveTime;
+	private GameModel _model;
 
 	public bool IsActive { get; private set;  }
 
-	void Start()
+	[Inject]
+	void Init(GameModel model)
 	{
-		CollsionArea.enabled = false; 
+		CollsionArea.enabled = false;
+		_model = model;
 	}
 
 	public override void Activate()
@@ -54,6 +59,10 @@ public class AttackAbility : Ability
 
 	private IEnumerator RunAttack()
 	{
+		if (_model.CurrentTarget != null)
+		{
+			this.transform.root.LookAt(_model.CurrentTarget.transform);
+		}
 		yield return new WaitForSeconds(WarmUpTime);
 		CollsionArea.enabled = true; 
 		foreach (var ability in DamageAbilities)
