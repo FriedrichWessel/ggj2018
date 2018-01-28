@@ -27,7 +27,7 @@ public class DropLootFromInventoryAbility : DropLootAbility
 		if (healthData.LastDamageDealer != null)
 		{
 			var receiver = healthData.LastDamageDealer.GetComponent<CollectKillRewardsAbility>();
-			if (receiver != null)
+			if (receiver != null && receiver.enabled)
 			{
 				receiver.Collect(items);
 			}
