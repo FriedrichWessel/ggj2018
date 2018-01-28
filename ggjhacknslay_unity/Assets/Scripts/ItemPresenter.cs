@@ -9,6 +9,10 @@ public class ItemPresenter : MonoBehaviour
 	public Text AttackLabel;
 	public Text NameLabel;
 	public Image Icon;
+
+	public Sprite DefaultArmor; 
+	public Sprite DefaultHelm;
+	
 	
 	public void ShowItem(Item item)
 	{
@@ -18,6 +22,17 @@ public class ItemPresenter : MonoBehaviour
 		if (item.Icon != null)
 		{
 			Icon.sprite = item.Icon;
+		}
+		else
+		{
+			if (item.SlotType == ItemType.Body)
+			{
+				Icon.sprite = DefaultArmor;
+			}
+			if (item.SlotType == ItemType.Head)
+			{
+				Icon.sprite = DefaultHelm;
+			}
 		}
 	}
 

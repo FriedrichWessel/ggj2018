@@ -6903,6 +6903,8 @@ MonoBehaviour:
   AttackLabel: {fileID: 1343366234}
   NameLabel: {fileID: 1132676465}
   Icon: {fileID: 432756830}
+  DefaultArmor: {fileID: 21300000, guid: da548657233f64018a15d26278f2d734, type: 3}
+  DefaultHelm: {fileID: 21300000, guid: c437d1a21da8240f3ae5ac6123fbd237, type: 3}
 --- !u!1 &1098718236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8673,6 +8675,8 @@ MonoBehaviour:
   AttackLabel: {fileID: 429256397}
   NameLabel: {fileID: 21693087}
   Icon: {fileID: 572847957}
+  DefaultArmor: {fileID: 21300000, guid: da548657233f64018a15d26278f2d734, type: 3}
+  DefaultHelm: {fileID: 21300000, guid: c437d1a21da8240f3ae5ac6123fbd237, type: 3}
 --- !u!224 &1283615240
 RectTransform:
   m_ObjectHideFlags: 0
