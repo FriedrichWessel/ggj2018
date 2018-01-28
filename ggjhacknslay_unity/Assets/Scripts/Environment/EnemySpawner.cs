@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour {
 		_pointCount = _spawnpoints.Length;
 		_enemyCount = _enemies.Length;
 		_container = container;
-		SpawnEnemies ();
+		//SpawnEnemies ();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour {
 		
 	}
 
-	void SpawnEnemies () {
+	public void SpawnEnemies () {
 		if (_enemyCount == 0)
 		{
 			return;

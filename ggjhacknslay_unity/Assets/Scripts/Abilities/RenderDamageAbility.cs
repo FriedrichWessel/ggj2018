@@ -40,16 +40,18 @@ public class RenderDamageAbility : Ability
 		}
 	}
 
-	IEnumerator FlickerMaterial () {
-		yield return Fade (1f, 0.2f);
+	IEnumerator FlickerMaterial ()
+	{
+		yield return null;
+		/*yield return Fade (1f, 0.2f);
 		yield return Fade (1f, -0.2f);
 		yield return Fade (1f, 0.2f);
-		yield return Fade (1f, -0.2f);
+		yield return Fade (1f, -0.2f);*/
 	}
 
 	IEnumerator Fade (float fadeTime, float fadeValue) {
 		while(_flickerTime < fadeTime) {
-			TheModel.GetComponent<MeshRenderer> ().material.SetFloat ("_ToWhite", _currentFlickerValue);
+			TheModel.GetComponent<SkinnedMeshRenderer> ().material.SetFloat ("_ToWhite", _currentFlickerValue);
 			_flickerTime += Time.deltaTime;
 			_currentFlickerValue += fadeValue;
 			yield return null;

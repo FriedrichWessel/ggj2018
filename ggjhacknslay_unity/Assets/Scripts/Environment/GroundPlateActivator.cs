@@ -16,6 +16,8 @@ public class GroundPlateActivator : MonoBehaviour
 				plate.Activate();
 			}
 		}
+		var spawner = gameObject.GetComponent<EnemySpawner>(); 
+		spawner.SpawnEnemies();
 		this.enabled = false; 
 	}
 }

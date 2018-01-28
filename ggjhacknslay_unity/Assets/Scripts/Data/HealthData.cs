@@ -26,4 +26,18 @@ public class HealthData : MonoBehaviour
 	{
 		CurrentHealth = BaseHealth; 
 	}
+
+	public void RemoveArmorItem(Item newItem)
+	{
+		var stack = new Stack<Item>();
+		while (ArmorItems.Count > 0)
+		{
+			var item = ArmorItems.Pop();
+			if (item != newItem)
+			{
+				stack.Push(newItem);
+			}
+		}
+		ArmorItems = stack;
+	}
 }

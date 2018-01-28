@@ -57,12 +57,22 @@ public class Inventory : MonoBehaviour
 	private void AddItemAfterSelect(Item selectedItem)
 	{
 		_selectedLootSignal -= AddItemAfterSelect;
+		var healtData = this.gameObject.GetComponentInChildren<HealthData>();
+		
 		if(_oldItem != selectedItem){
 			Destroy(_oldItem.gameObject);
+			if (healtData != null)
+			{
+				healtData.RemoveArmorItem(_oldItem);
+			}
 		}
 		if (_newItem != selectedItem)
 		{
 			Destroy(_newItem.gameObject);
+			if (healtData != null)
+			{
+				healtData.RemoveArmorItem(_newItem);
+			}
 		}
 		AddItem(selectedItem);
 	}
