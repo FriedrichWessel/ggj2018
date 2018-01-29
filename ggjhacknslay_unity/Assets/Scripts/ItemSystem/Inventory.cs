@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
 			var healtData = this.gameObject.GetComponentInChildren<HealthData>();
 			if (healtData != null)
 			{
-				if (item.ArmorValue > 0)
+				if (item.BaseArmor > 0)
 				{
 					healtData.ArmorItems.Push(item);
 				}
